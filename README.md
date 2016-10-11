@@ -1,41 +1,41 @@
 # Mac CLI
 
- OS X command line tools for developers
+ macOS command line tools for developers
+
+:star: Now with modularity and plugins! You can check the plugins folder: [/mac-cli/plugins](https://github.com/guarinogabriel/mac-cli/tree/master/mac-cli/plugins)
+
+_Contributions to add new plugins and keep improving the existing ones are welcome and very much appreciated!_
 
 ![image](https://github.com/guarinogabriel/mac-cli/raw/master/demo/demo.gif)
 
-The ultimate tool for developers to manage their Mac. It provides a huge set of command line commands that automate the usage of your OS X system.
+The ultimate tool for developers to manage their Mac. It provides a huge set of command line commands that automate the usage of your macOS system.
 When you run a function, the executed command is displayed and that helps you memorize each of the Utilities for future usage.
 
 ---
 
-### Installation in 2 Simple Steps
+### Installation in 1 Simple Step - Including configuration wizard!
 
-1- Download command line tool to your local machine:
-> `git clone https://github.com/guarinogabriel/mac-cli.git && cd mac-cli`
+Via curl
+> `sh -c "$(curl -fsSL https://raw.githubusercontent.com/guarinogabriel/mac-cli/master/mac-cli/tools/install)"`
 
-2- Run the installer. There are 2 install options:
+Via wget
+> `sh -c "$(wget https://raw.githubusercontent.com/guarinogabriel/mac-cli/master/mac-cli/tools/install -O -)"`
 
-The following command will install the minimum required dependencies:
-> `sh mac install`
-
-The following command will install all the dependencies and integrated projects:
-> `sh mac install:all`
-
-Re-open your terminal client. You will be able to run all the commands listed below, for example:
+Then, re-open your terminal client. You will be able to run all the commands listed below, for example:
 > `mac help`
 
 ---
 
 ### Configuration
 
-Update the shell script to match your local environment configuration. Global variables are defined at the beginning of the file.
+The configuration is done when you install Mac CLI for the first time though the installer configuration wizard.
+After that, you can update your Mac CLI configuration by editing the following file: `/usr/local/bin/mac`
 
 ---
 
 ### Requirements
 
-These are the requirements to be able to run all the commands (all the dependencies/requirements can be installed running "mac install"):
+These are the requirements to be able to run all the commands (the dependencies/requirements are installed when you install Mac CLI for the first time):
 
 * Homebrew
 * Git
@@ -44,58 +44,70 @@ These are the requirements to be able to run all the commands (all the dependenc
 
 ---
 
-### Integrated Projects
+### Update
 
-The following amazing projects have been integrated on the mac script (all the integrated projects can be installed running `mac install:all`):
-* Glances (https://github.com/nicolargo/glances)
-* speedtest-cli (https://github.com/sivel/speedtest-cli)
-* n98-magerun (https://github.com/netz98/n98-magerun)
-* n98-magerun2 (https://github.com/netz98/n98-magerun2)
-* Git Stats (https://github.com/IonicaBizau/git-stats)
-* Storm (https://github.com/emre/storm)
+You can update Mac CLI to the latest version by running:
+> `sh -c "$(curl -fsSL https://raw.githubusercontent.com/guarinogabriel/mac-cli/master/mac-cli/tools/update)"`
 
 ---
 
-### Commands List
+### Uninstallation
+
+You can uninstall Mac CLI by running:
+> `sh -c "$(curl -fsSL https://raw.githubusercontent.com/guarinogabriel/mac-cli/master/mac-cli/tools/uninstall)"`
+
+---
+
+### Integrated Projects
+
+The following amazing projects have been integrated on the mac script (all the integrated projects are optional and can be installed through the installation wizard):
+* Glances (https://github.com/nicolargo/glances)
+* MySQL CLI (https://github.com/dbcli/mycli)
+* fast-cli (https://github.com/sindresorhus/fast-cli)
+* n98-magerun (https://github.com/netz98/n98-magerun)
+* n98-magerun2 (https://github.com/netz98/n98-magerun2)
+* imageOptim
+* iStats
+
+---
+
+### Help / Commands List
 
 | Command  | Description | Arguments |
 | ------------- | ------------- | ------------- |
-| `mac list`  | List all available commands in mac script  | |
-| `mac list:general`  | List all general commands in mac script  | |
-| `mac list:search`  | List all search commands in mac script  | |
-| `mac list:network`  | List all network commands in mac script  | |
-| `mac list:lamp`  | List all LAMP commands in mac script  | |
-| `mac list:ssh`  | List all SSH commands in mac script  | |
-| `mac list:performance`  | List all performance commands in mac script  | |
-| `mac list:terminal`  | List all terminal commands in mac script  | |
-| `mac list:git`  | List all Git commands in mac script  | |
-| `mac list:web`  | List all Web commands in mac script  | |
-| `mac list:brew`  | List all Homebrew commands in mac script  | |
-| `mac list:xcode`  | List all Xcode commands in mac script  | |
-| `mac list:image`  | List all Image commands in mac script  | |
-| `mac list:magento`  | List all Magento commands in mac script  | |
+| `mac help`  | List all available commands in mac script  | |
 
 ### General Commands
 
 | Command  | Description | Arguments |
 | ------------- | ------------- | ------------- |
-| `mac install`  | Install all mac script dependencies to be able to run all commands  | |
-| `mac install:all`  | Install all mac script dependencies and integrated projects  | |
-| `mac update`  | Install OS X software updates, update installed Ruby gems, Homebrew, npm and their installed packages  | |
+| `mac update`  | Install macOS software updates, update installed Ruby gems, Homebrew, npm and their installed packages  | |
 | `mac lock`  | Lock  | |
-| `mac restart`  | Restart OS X  | |
+| `mac restart`  | Restart macOS  | |
 | `mac sleep`  | Sleep mode  | |
 | `mac shutdown`  | Shutdown  | |
+| `mac presentation`  | Prepare MAC for presentation: minimize all apps, close browsers, send files from desktop and downloads to trash and set not disturb mode  | |
 | `mac time`  | Show clock at top right position in Terminal/iTerm  | |
 | `mac screensaver`  | Start screensaver  | |
 | `mac folders:list`  | List folders in current directory with their current size  | |
 | `mac folder:size`  | Calculate current folder size  | |
 | `mac folders:remove-empty`  | Remove empty subdirectories  | |
 | `mac apps:close-all`  | Close all opened apps  | |
+| `mac bluetooth:status`  | Get the bluetooth status  | |
+| `mac bluetooth:enable`  | Enable bluetooth  | |
+| `mac bluetooth:disable`  | Disable bluetooth  | |
+| `mac wifi:status`  | Get the wifi status  | |
+| `mac wifi:scan`  | Scan available wifi networks  | |
+| `mac wifi:enable`  | Enable wifi  | |
+| `mac wifi:disable`  | Disable wifi  | |
+| `mac wifi:password`  | Get password for current wifi network  | |
+| `mac dock:add-space`  | Add blank space to dock  | |
 | `mac apps:app-store`  | Get list of installed apps from App Store  | |
 | `mac eject-all`  | Eject all mounted volumes and disks  | |
-| `mac battery:status`  | Get battery status  | |
-| `mac info`  | Get OS X version information  | |
+| `mac battery`  | Get battery status  | |
+| `mac info`  | Get macOS version information  | |
+| `mac hidden:show`  | Show hidden files  | |
+| `mac hidden:hide`  | Hide hidden files  | |
 | `mac find:text X`  | Find exact phrase recursively inside directory  | X = Text string |
 | `mac find:biggest-files`  | Find biggest files inside directory  | |
 | `mac find:biggest-directories`  | Find biggest directories inside directory  | |
@@ -132,7 +144,6 @@ The following amazing projects have been integrated on the mac script (all the i
 | ------------- | ------------- | ------------- |
 | `mac mysql`  | Open Sequel PRO app)  |  |
 | `mac mysql:cli`  | Start MySQL CLI with autocompletion and syntax higlighting  |  |
-| `mac phpmyadmin`  | Open PHPMyAdmin  | |
 | `mac mysql:list`  | List all MySQL databases  | |
 | `mac mysql:dump-all`  | Export all MySQL databases to individual files  | |
 | `mac mysql:dump X`  | Export MySQL database to current directory  |  X = database name  |
@@ -169,7 +180,6 @@ The following amazing projects have been integrated on the mac script (all the i
 | ------------- | ------------- | ------------- |
 | `mac mysql:gui`  | Open Sequel PRO app)  |  |
 | `mac mysql:cli`  | Start MySQL CLI with autocompletion and syntax higlighting  |  |
-| `mac phpmyadmin`  | Open PHPMyAdmin  | |
 | `mac mysql:list`  | List all MySQL databases  | |
 | `mac mysql:dump-all`  | Export all MySQL databases to individual files  | |
 | `mac mysql:dump X`  | Export MySQL database to current directory  |  X = database name  |
@@ -234,7 +244,6 @@ The following amazing projects have been integrated on the mac script (all the i
 | `mac git:settings`  | Check Git settings  |
 | `mac git:add-removed`  | Add removed files to staged files  |
 | `mac git:size`  | Get size for current Git directory  |
-| `mac github:streak`  | See current Git contribution streak |
 
 ### Web Utilities
 
@@ -246,7 +255,7 @@ The following amazing projects have been integrated on the mac script (all the i
 
 | Command  | Description |
 | ------------- | ------------- |
-| `mac brew:list`  | Get a list of installed Homebrew packages  |
+| `mac brew`  | Get a list of installed Homebrew packages  |
 
 
 ### Xcode Utilities
